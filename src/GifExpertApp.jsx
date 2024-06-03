@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { AddCategory, GifGrid } from "./components/index";
-
+import { AddQuantity } from "./components/AddQuantity";
+import { LogoPc } from  "./components/LogoPc";
 
 
 export const GifExpertApp = () => {
@@ -18,11 +19,22 @@ export const GifExpertApp = () => {
   return (
     <>
         
-        <h1>GifExpertApp</h1>
+        <h1 className="title-first bungee-spice-regular">
+            <LogoPc/>    
+            GifExpertApp
+            
+        </h1>
+        
 
-        <AddCategory 
-            onNewCategory = { ( value) => onAddCategory( value )}       
-        />
+        <div className="flex">
+            <AddCategory 
+                onNewCategory = { ( value) => onAddCategory( value )}       
+            />
+            
+            <AddQuantity className="poppins-regular"/>
+        </div>
+
+        
       
        
         { 

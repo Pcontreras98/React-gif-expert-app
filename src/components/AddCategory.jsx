@@ -22,7 +22,7 @@ export const AddCategory = ( {onNewCategory} ) => {
     }
 
   return (
-    <form onSubmit={ onSubmit }>
+    <form onSubmit={ onSubmit } className='width-80'>
         <input
         type = 'text'
         placeholder="Buscar gifs"
