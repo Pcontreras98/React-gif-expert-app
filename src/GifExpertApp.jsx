@@ -21,6 +21,8 @@ export const GifExpertApp = () => {
     <>
         
         <h1 className="title-first bungee-spice-regular">
+
+            
             <LogoPc/>    
             GifExpertApp
         </h1>

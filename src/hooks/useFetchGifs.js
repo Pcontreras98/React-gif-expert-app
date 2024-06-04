@@ -17,6 +17,8 @@ export const useFetechGifs = ( category, limit ) => {
 
     }, []);
 
+    
+
     return {
         images,
         isLoading
