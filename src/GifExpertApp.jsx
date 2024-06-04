@@ -7,12 +7,12 @@ import { LogoPc } from  "./components/LogoPc";
 
 export const GifExpertApp = () => {
 
-    const [ categories , setcategories ] = useState([' Valorant ']);
+    const [ categories , setcategories ] = useState([{ category: 'Valorant', limit: 8 }]);
 
-    const onAddCategory = (newCategory) => {
+    const onAddCategory = (newCategory, limit) => {
         if (categories.includes(newCategory)) return;
 
-        setcategories([newCategory,...categories]);
+        setcategories([{ category: newCategory, limit: limit },...categories]);
     }
 
     
@@ -23,29 +23,19 @@ export const GifExpertApp = () => {
         <h1 className="title-first bungee-spice-regular">
             <LogoPc/>    
             GifExpertApp
-            
         </h1>
         
+        <div>
+                <AddCategory
+                    onNewCategory={(value, limit) => onAddCategory(value, limit)}
+                />
 
-        <div className="">
-            <AddCategory 
-                onNewCategory = { ( value) => onAddCategory( value )}       
-            />
-            
-            
         </div>
 
-        
-      
-       
-        { 
-            categories.map( category => (
-                <GifGrid 
-                        key={ category }
-                        category={ category }
-                />
-            ))
-        }    
+        {   
+                    categories.map(({ category, limit }) => (
+                    <GifGrid key={category} category={category} limit={limit} />
+        ))}
           
 
 

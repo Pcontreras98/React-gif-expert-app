@@ -3,9 +3,9 @@ import { useFetechGifs } from '../hooks/useFetchGifs';
 
 
 
-export const GifGrid = ({ category }) => {
+export const GifGrid = ({ category, limit }) => {
 
-    const { images, isLoading } = useFetechGifs( category );
+    const { images, isLoading } = useFetechGifs( category, limit);
 
     return (
         <>  
