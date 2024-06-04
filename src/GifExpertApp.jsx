@@ -27,7 +27,7 @@ export const GifExpertApp = () => {
         </h1>
         
 
-        <div className="flex">
+        <div className="">
             <AddCategory 
                 onNewCategory = { ( value) => onAddCategory( value )}       
             />
