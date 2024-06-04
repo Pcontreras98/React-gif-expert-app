@@ -1,12 +1,13 @@
 import { useState } from "react"
 import { AddCategory, GifGrid } from "./components/index";
-import { AddQuantity } from "./components/AddQuantity";
+
 import { LogoPc } from  "./components/LogoPc";
+
 
 
 export const GifExpertApp = () => {
 
-    const [ categories , setcategories ] = useState([' One Punch ']);
+    const [ categories , setcategories ] = useState([' Valorant ']);
 
     const onAddCategory = (newCategory) => {
         if (categories.includes(newCategory)) return;
@@ -31,7 +32,7 @@ export const GifExpertApp = () => {
                 onNewCategory = { ( value) => onAddCategory( value )}       
             />
             
-            <AddQuantity className="poppins-regular"/>
+            
         </div>
 
         
