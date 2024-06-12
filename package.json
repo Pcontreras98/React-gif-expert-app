@@ -1,6 +1,7 @@
 {
   "name": "gift-expert-app",
   "private": true,
+  "homepage": "https://pcontreras98.github.io/React-testimonios-first-proyect",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
