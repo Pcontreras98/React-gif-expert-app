@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import PropTypes from "prop-types";
+
 
 export const AddCategory = ( {onNewCategory} ) => {
 
@@ -16,8 +18,8 @@ export const AddCategory = ( {onNewCategory} ) => {
 
     const onSubmit = (event) => {
         event.preventDefault();
-        if ( inputValue.trim().length <=1 || selectValue === '' ) return;
-       
+        // if ( inputValue.trim().length <=1 || selectValue === ''  ) return;
+        if ( inputValue.trim().length <=1  ) return;
         setinputValue('');
         onNewCategory(inputValue.trim(),selectValue);
         
@@ -25,7 +27,7 @@ export const AddCategory = ( {onNewCategory} ) => {
     }
 
   return (
-    <form onSubmit={ onSubmit } className='width-100 flex'>
+    <form onSubmit={ onSubmit } className='width-100 flex' aria-label='form'>
         <input
         type = 'text'
         placeholder="Buscar gifs"
@@ -33,7 +35,7 @@ export const AddCategory = ( {onNewCategory} ) => {
         onChange={ onInputChange }
         />
 
-        <select className='option-select' value = { selectValue } onChange={ onSelectChange } >
+        <select className='option-select' value = { selectValue } onChange={ onSelectChange }>
                 <option value='' disabled>Cantidad</option>
                 <option value={4}>4</option>
                 <option value={8}>8</option>
@@ -43,4 +45,9 @@ export const AddCategory = ( {onNewCategory} ) => {
         </select>
     </form>
   )
+}
+
+
+AddCategory.propTypes = {
+  onNewCategory: PropTypes.func.isRequired,
 }
